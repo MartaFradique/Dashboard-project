@@ -25,52 +25,57 @@ const App = () => {
         {activeMenu ? (
           <div className="w-72 fixed sidebar dark:bg-secondary-dark-bg bg-white">
             <Sidebar />
-            </div>
+          </div>
         ): (
           <div className='w-0 dark:bg-secondary-dark-bg'>
             <Sidebar />
           </div>
 
         )} 
-        <div className= { 
-          `dark:bg-main-bg bg-main-bg min-h-screen w-full ${activeMenu ? ' md:ml-72' : 'flex-2 '} `
-          
-        }>
+        <div
+            className={
+              activeMenu
+                ? 'dark:bg-main-dark-bg  bg-main-bg min-h-screen md:ml-72 w-full  '
+                : 'bg-main-bg dark:bg-main-dark-bg  w-full min-h-screen flex-2 '
+            }
+          >
         
-        </div>
-        <div className= "fixed md:static bg-main-bg dark:bg-main-dark-bg navbar w-full">
-          <Navbar />
-        </div>
-        <div>
-          <Routes>
-            {/* dashboard */}
-            <Route path="/ecommerce" element={<Ecommerce />} />
-            <Route path="/" element={<Ecommerce />} />
+        
+          <div className= "fixed md:static bg-main-bg dark:bg-main-dark-bg navbar w-full">
+            <Navbar />
+          </div>
+            <div>
+              <Routes>
+                {/* dashboard */}
+                <Route path="/ecommerce" element={<Ecommerce />} />
+                <Route path="/" element={<Ecommerce />} />
 
-            {/* Pages */}
-            <Route path="/customers" element={<Customers />} />
-            <Route path="/orders" element={<Orders />} />
-            <Route path="/employees" element={<Employees />} />
+                {/* Pages */}
+                <Route path="/customers" element={<Customers />} />
+                <Route path="/orders" element={<Orders />} />
+                <Route path="/employees" element={<Employees />} />
 
-            {/* Apps */}
-            <Route path="/kanban" element={<Kanban />} />
-            <Route path="/editor" element={<Editor />} />
-            <Route path="/calender" element={<Calendar />} />
-            <Route path="/color-picker" element={<ColorPicker />} />
-            
-            {/* Charts */}
-            <Route path="/line" element={<Line />} />
-            <Route path="/area" element={<Area />} />
-            <Route path="/bar" element={<Bar />} />
-            <Route path="/pie" element={<Pie />} />
-            <Route path="/financial" element={<Financial />} />
-            <Route path="/color-mapping" element={<ColorMapping />} />
-            <Route path="/pyramid" element={<Pyramid />} />
-            <Route path="/stacked" element={<Stacked />} />
+                {/* Apps */}
+                <Route path="/kanban" element={<Kanban />} />
+                <Route path="/editor" element={<Editor />} />
+                <Route path="/calender" element={<Calendar />} />
+                <Route path="/color-picker" element={<ColorPicker />} />
+                
+                {/* Charts */}
+                <Route path="/line" element={<Line />} />
+                <Route path="/area" element={<Area />} />
+                <Route path="/bar" element={<Bar />} />
+                <Route path="/pie" element={<Pie />} />
+                <Route path="/financial" element={<Financial />} />
+                <Route path="/color-mapping" element={<ColorMapping />} />
+                <Route path="/pyramid" element={<Pyramid />} />
+                <Route path="/stacked" element={<Stacked />} />
 
-          </Routes>
+              </Routes>
+            </div>
+          </div>
         </div>
-      </div>
+      
       </BrowserRouter>
     </div>
   )
