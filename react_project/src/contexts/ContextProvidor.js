@@ -1,7 +1,7 @@
 import React, {createContext, useContext, useState} from "react";
 
 const StateContext = createContext();
-
+zzzz
 const initialState = {
     chat: false,
     chart: false,

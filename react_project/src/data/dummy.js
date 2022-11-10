@@ -623,6 +623,7 @@ export const earningData = [
     iconBg: '#E5FAFB',
     pcColor: 'red-600',
   },
+  
   {
     icon: <BsBoxSeam />,
     amount: '4,396',
