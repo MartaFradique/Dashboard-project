@@ -5,19 +5,22 @@ import { TooltipComponent } from '@syncfusion/ej2-react-popups';
 import { Navbar, Footer, Sidebar, ThemeSettings} from './components';
 import './App.css';
 import { Ecommerce, Orders, Calendar, Employees, Stacked, Pyramid, Customers,
-   Kanban,Area, Bar, Pie, Financial, Line ,ColorPicker, ColorMapping,  Editor} from './pages';
+Area, Bar, Pie, Financial, Line ,ColorPicker, ColorMapping} from './pages';
 import { useStateContext } from './contexts/ContextProvidor';
 
 const App = () => {
   // «const activeMenu = true;
-  const {activeMenu} = useStateContext( );
+  const {activeMenu, themeSettings, setThemeSettings, currentColor} = useStateContext( );
   return (
     <div>
       <BrowserRouter>
       <div className="flex relative dark:bg-main-dark-bg" > {/* dark mode backgroundColor */}
         <div className="fixed right-4 bottom-4" style={{zIndex: '1000'}}> {/* zindex to make ir aapper above the other elements*/}
           <TooltipComponent content="Settings" position="Top">
-            <button type="button" className="text-3xl text-white p-3 hover:drop-shadow-xl hover:bg-light-gray" style={{background: 'DarkCyan', borderRadius: '50%'}}>
+            <button type="button"
+             className="text-3xl text-white p-3 hover:drop-shadow-xl hover:bg-light-gray" 
+             style={{background: currentColor, borderRadius: '50%'}}
+             onClick={() => setThemeSettings(true)}>
               <FiSettings />
             </button>
           </TooltipComponent>
@@ -45,6 +48,8 @@ const App = () => {
             <Navbar />
           </div>
             <div>
+              {themeSettings && <ThemeSettings />}
+             
               <Routes>
                 {/* dashboard */}
                 <Route path="/ecommerce" element={<Ecommerce />} />
@@ -56,8 +61,7 @@ const App = () => {
                 <Route path="/employees" element={<Employees />} />
 
                 {/* Apps */}
-                <Route path="/kanban" element={<Kanban />} />
-                <Route path="/editor" element={<Editor />} />
+              
                 <Route path="/calendar" element={<Calendar />} />
                 <Route path="/color-picker" element={<ColorPicker />} />
                 
