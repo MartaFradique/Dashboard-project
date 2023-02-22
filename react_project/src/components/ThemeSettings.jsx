@@ -28,7 +28,7 @@ const ThemeSettings = () => {
          
         </div>
         <div className='flex-col border-t-1 border-color p-4 ml-4'>
-          <p  className='font-semibold text-lg text-gray-700'>Theme Options</p>
+          <p  className='font-semibold text-lg text-gray-700 dark:text-black'>Theme Options</p>
           <div className='mt-4 '>
             <input 
             type='radio'

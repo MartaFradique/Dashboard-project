@@ -10,9 +10,9 @@ import { useStateContext } from './contexts/ContextProvidor';
 
 const App = () => {
   // «const activeMenu = true;
-  const {activeMenu, themeSettings, setThemeSettings, currentColor} = useStateContext( );
+  const {activeMenu, themeSettings, setThemeSettings, currentColor, currentMode} = useStateContext( );
   return (
-    <div>
+    <div className={currentMode==='Dark'? 'dark' : ''}>
       <BrowserRouter>
       <div className="flex relative dark:bg-main-dark-bg" > {/* dark mode backgroundColor */}
         <div className="fixed right-4 bottom-4" style={{zIndex: '1000'}}> {/* zindex to make ir aapper above the other elements*/}
