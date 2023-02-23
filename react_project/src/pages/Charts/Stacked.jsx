@@ -1,11 +1,7 @@
-import React from 'react'
+import React from "react";
 
 const Stacked = () => {
-  return (
-    <div>
-      
-    </div>
-  )
-}
+  return <div></div>;
+};
 
-export default Stacked
+export default Stacked;
