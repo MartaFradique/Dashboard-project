@@ -22,7 +22,7 @@ const LineChart = () => {
     <div>
       <ChartComponent
         id="line-chart"
-        height="432px"
+        height="400px"
         primaryXAxis={LinePrimaryXAxis}
         primaryYAxis={LinePrimaryYAxis}
         chartArea={{ border: { width: 0 } }}

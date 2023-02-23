@@ -1,6 +1,8 @@
 import React from "react";
 import { BsCurrencyDollar } from "react-icons/bs";
 import { GoPrimitiveDot } from "react-icons/go";
+import { BiUpArrowAlt } from "react-icons/bi";
+import { AiFillAmazonCircle } from "react-icons/ai";
 import {
   Stacked,
   Doughnut,
@@ -13,6 +15,7 @@ import {
   earningData,
   SparklineAreaData,
   ecomPieChartData,
+  pieChartData,
 } from "../data/dummy";
 import { useStateContext } from "../contexts/ContextProvidor";
 
@@ -112,7 +115,7 @@ const Ecommerce = () => {
             </div>
           </div>
 
-          <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg rounded-2xl md:w-400 p-4 m-3 basis-1/2">
+          <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg rounded-2xl md:w-400 p-8 m-3 flex justify-center items-center gap-10">
             <div>
               <p className="text-2xl font-semibold ">$43,246</p>
               <p className="text-gray-400">Yearly sales</p>
@@ -183,59 +186,141 @@ const Ecommerce = () => {
       </div>
 
       {/* third section */}
-      <div className="flex flex-wrap lg:flex-nowrap justify-center gap-10">
+      <div className="flex flex-wrap lg:flex-nowrap justify-center gap-10 mb-3">
         <div className="flex flex-col ">
-          <div
-            className=" rounded-2xl md:w-400 p-4 m-3 basis-1/2"
-            style={{ backgroundColor: currentColor }}
-          >
-            hello
-          </div>
-          <div className="md:">
-            <AreaChart />
+          <div className=" rounded-2xl md:w-400 p-4 m-3 basis-1/2 bg-white h-44 dark:bg-secondary-dark-bg dark:text-gray-200 "></div>
+          <div className=" rounded-2xl md:w-400 p-4 m-3 basis-1/2 bg-white h-44 dark:bg-secondary-dark-bg dark:text-gray-200 ">
+            <Doughnut
+              id="chart-pie"
+              data={pieChartData}
+              legendVisiblity
+              height="180px"
+            />
           </div>
         </div>
 
         <div className="bg-white dark:bg-secondary-dark-bg dark:text-gray-200  rounded-xl  p-10 pt-9 m-3 md:w-780  ">
+          <div className="pb-4 font-semibold dark:text-white text-2xl font-mono">
+            Inflation Rate
+          </div>
           <LineChart />
         </div>
       </div>
 
-
-
       {/* fourth section */}
       {/* <div className="flex gap-10 flex-wrap justify-center h-780">
         <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg m-3 p-4 rounded-2xl md:w-780  "> */}
-      <div className="flex flex-wrap lg:flex-nowrap justify-center"
-     
-      >
-        <div className="rounded-2xl flex flex-row"
-         style={{backgroundColor: currentColor}}>
-           <div className=" text-white rounded-xl p-8 pt-9 m-3 md:w-72">
-            Hello
-          </div>
-          <div className=" text-white rounded-xl p-8 pt-9 m-3 md:w-72">
-            Hello
-          </div>
-          <div className=" text-white rounded-xl p-8 pt-9 m-3 md:w-72">
-            Hello
-          </div>
-          <div className=" text-white rounded-xl p-8 pt-9 m-3 md:w-72">
-            Hello
+      <div className="flex flex-wrap lg:flex-nowrap justify-center  mb-3">
+        <div
+          className="rounded-2xl flex flex-row"
+          style={{ backgroundColor: currentColor }}
+        >
+          <div className=" text-white p-5 pt-2 m-3 md:w-72  ">
+            <div className="text-white text-sm font-sans mb-2">
+              Total Income
+            </div>
+            <div className="text-white text-2xl font-mono font-bold ">
+              $14,025
+            </div>
+            <div className="flex flex-row font-sans text-center gap-3 mt-2">
+              <div className="text-center text-sm">3.14</div>
+              <BiUpArrowAlt />
+              <div className="text-center text-sm">this year</div>
+            </div>
           </div>
 
+          <div className=" text-white p-5 pt-2 m-3 md:w-72  ">
+            <div className="text-white text-sm font-sans mb-2">
+              Total Income
+            </div>
+            <div className="text-white text-2xl font-mono font-bold ">
+              $14,025
+            </div>
+            <div className="flex flex-row font-sans text-center gap-3 mt-2">
+              <div className="text-center text-sm">3.14</div>
+              <BiUpArrowAlt />
+              <div className="text-center text-sm">this year</div>
+            </div>
+          </div>
+          <div className=" text-white p-5 pt-2 m-3 md:w-72  ">
+            <div className="text-white text-sm font-sans mb-2">
+              Total Income
+            </div>
+            <div className="text-white text-2xl font-mono font-bold ">
+              $14,025
+            </div>
+            <div className="flex flex-row font-sans text-center gap-3 mt-2">
+              <div className="text-center text-sm">3.14</div>
+              <BiUpArrowAlt />
+              <div className="text-center text-sm">this year</div>
+            </div>
+          </div>
+          <div className=" text-white p-5 pt-2 m-3 md:w-72  ">
+            <div className="text-white text-sm font-sans mb-2">
+              Total Income
+            </div>
+            <div className="text-white text-2xl font-mono font-bold ">
+              $14,025
+            </div>
+            <div className="flex flex-row font-sans text-center gap-3 mt-2">
+              <div className="text-center text-sm">3.14</div>
+              <BiUpArrowAlt />
+              <div className="text-center text-sm">this year</div>
+            </div>
+          </div>
         </div>
-       
       </div>
-      
 
       {/* fifth section */}
       <div className="flex flex-wrap lg:flex-nowrap justify-center gap-10">
         <div className="bg-white dark:bg-secondary-dark-bg dark:text-gray-200 rounded-xl p-10 pt-9 m-3 md:w-780">
-          <AreaChart />
+          <div className="pb-4 font-semibold dark:text-white text-2xl font-mono">Inflacion Rate</div>
+          <div className="flex flex-col">
+           
+              <AreaChart />
+           
+          </div>
+        
+         
+        </div>
+        <div className="bg-white dark:bg-secondary-dark-bg dark:text-gray-200 rounded-xl p-10 pt-9 m-3 md:w-400">
+          <div className="pb-10 font-semibold dark:text-white text-2xl font-mono">Your Portfolio</div>
+
+          <div className="dark:text-white text-xl text-center">$7897,5</div>
+          <div className=" dark:text-white text-sm text-gray-700 text-center pb-12">Total Balance</div>
+        <div>
+          <div className=" border-b-1 border-color dark:border-white mb-4">
+
+            <div className="flex flex-row justify-between pb-10">
+              <div>Cash Deposits</div>
+              <div>$789697,5</div>
+            </div>
+          </div>
+
+            <div className="border-b-1 border-color dark:border-white mb-4">  
+            <div className="flex flex-row justify-between pb-10">
+              <div>Invested Dividents</div>
+              <div>$697,5</div>
+            </div>
+            </div>
+
+            <div className="border-b-1 border-color dark:border-white mb-4">  
+            <div className="flex flex-row justify-between pb-5">
+              <AiFillAmazonCircle style={{height:'30px', width:'30px', color:'red'}} />
+              <div>Invested Labour</div>
+              <div>$1234,5</div>
+            </div>
+            </div>
+
+            <div className="flex flex-row justify-between">
+              <div>Capital Gains</div>
+              <div>$1234789,3</div>
+            </div>
+         
+        </div>
         </div>
       </div>
-      
+     
     </div>
   );
 };
