@@ -2,7 +2,9 @@ import React from "react";
 import { BsCurrencyDollar } from "react-icons/bs";
 import { GoPrimitiveDot } from "react-icons/go";
 import { BiUpArrowAlt } from "react-icons/bi";
-import { AiFillAmazonCircle } from "react-icons/ai";
+import { AiFillAmazonCircle, AiOutlineArrowDown, AiOutlineArrowUp } from "react-icons/ai";
+import { DiGoogleCloudPlatform, DiCssdeck , DiGoogleAnalytics, DiSafari} from "react-icons/di";
+
 import {
   Stacked,
   Doughnut,
@@ -19,7 +21,7 @@ import {
 } from "../data/dummy";
 import { useStateContext } from "../contexts/ContextProvidor";
 
-const Ecommerce = () => {
+const Dashboard = () => {
   const { currentColor } = useStateContext();
   return (
     <div className="mt-12">
@@ -188,7 +190,31 @@ const Ecommerce = () => {
       {/* third section */}
       <div className="flex flex-wrap lg:flex-nowrap justify-center gap-10 mb-3">
         <div className="flex flex-col ">
-          <div className=" rounded-2xl md:w-400 p-4 m-3 basis-1/2 bg-white h-44 dark:bg-secondary-dark-bg dark:text-gray-200 "></div>
+          <div className=" rounded-2xl md:w-400 p-4 m-3 basis-1/2 bg-white h-44 dark:bg-secondary-dark-bg dark:text-gray-200 ">
+            <div className="flex flex-row justify-between px-10 pt-3">
+              <div>
+                <div className="text-xl text-gray-600 pb-6 pt-3">Costumers</div>
+                <div className="text-3xl font-semibold font-mono pb-12">44.725</div>
+                <div className="flex flex-row">
+                  <AiOutlineArrowDown style={{height:'20px', width:'20px', color:" #FF0000"}} />
+                 
+                  <div className="text-red-500">-12,4%</div>
+                </div>
+              </div>
+              <div>
+                <div className="text-xl text-gray-600 pb-6 pt-3">Orders</div>
+                <div className="text-3xl font-semibold font-mono pb-12">285</div>
+                <div className="flex flex-row">
+                  <AiOutlineArrowUp style={{height:'20px', width:'20px', color:" #00FF00"}} />
+                  <div className="text-green-600">17,2%</div>
+                </div>
+              </div>
+            </div>
+            
+
+          </div>
+
+
           <div className=" rounded-2xl md:w-400 p-4 m-3 basis-1/2 bg-white h-44 dark:bg-secondary-dark-bg dark:text-gray-200 ">
             <Doughnut
               id="chart-pie"
@@ -201,7 +227,7 @@ const Ecommerce = () => {
 
         <div className="bg-white dark:bg-secondary-dark-bg dark:text-gray-200  rounded-xl  p-10 pt-9 m-3 md:w-780  ">
           <div className="pb-4 font-semibold dark:text-white text-2xl font-mono">
-            Inflation Rate
+            Inflation Rate 
           </div>
           <LineChart />
         </div>
@@ -224,6 +250,7 @@ const Ecommerce = () => {
             </div>
             <div className="flex flex-row font-sans text-center gap-3 mt-2">
               <div className="text-center text-sm">3.14</div>
+
               <BiUpArrowAlt />
               <div className="text-center text-sm">this year</div>
             </div>
@@ -274,7 +301,7 @@ const Ecommerce = () => {
       {/* fifth section */}
       <div className="flex flex-wrap lg:flex-nowrap justify-center gap-10">
         <div className="bg-white dark:bg-secondary-dark-bg dark:text-gray-200 rounded-xl p-10 pt-9 m-3 md:w-780">
-          <div className="pb-4 font-semibold dark:text-white text-2xl font-mono">Inflacion Rate</div>
+          <div className="pb-4 font-semibold dark:text-white text-2xl font-mono">Inflation Rate Percentage</div>
           <div className="flex flex-col">
            
               <AreaChart />
@@ -291,14 +318,16 @@ const Ecommerce = () => {
         <div>
           <div className=" border-b-1 border-color dark:border-white mb-4">
 
-            <div className="flex flex-row justify-between pb-10">
+            <div className="flex flex-row justify-between pb-5">
+              <DiGoogleAnalytics style={{height:'30px', width:'30px', color:"rgb(0, 194, 146)" }} />
               <div>Cash Deposits</div>
               <div>$789697,5</div>
             </div>
           </div>
 
             <div className="border-b-1 border-color dark:border-white mb-4">  
-            <div className="flex flex-row justify-between pb-10">
+            <div className="flex flex-row justify-between pb-5">
+              <DiCssdeck  style={{height:'30px', width:'30px', color:"rgb(228, 106, 118)"}} />
               <div>Invested Dividents</div>
               <div>$697,5</div>
             </div>
@@ -306,14 +335,24 @@ const Ecommerce = () => {
 
             <div className="border-b-1 border-color dark:border-white mb-4">  
             <div className="flex flex-row justify-between pb-5">
-              <AiFillAmazonCircle style={{height:'30px', width:'30px', color:'red'}} />
+              <AiFillAmazonCircle style={{height:'30px', width:'30px', color:'#03C9D7' }} />
               <div>Invested Labour</div>
               <div>$1234,5</div>
             </div>
             </div>
 
-            <div className="flex flex-row justify-between">
+            <div className="border-b-1 border-color dark:border-white mb-4">
+            <div className="flex flex-row justify-between pb-5">
+            <DiGoogleCloudPlatform style={{height:'30px', width:'30px', color:"rgb(254, 201, 15)"}} />
               <div>Capital Gains</div>
+              <div>$1234789,3</div>
+            </div>
+            </div>
+
+
+            <div className="flex flex-row justify-between">
+            <DiSafari style={{height:'30px', width:'30px', color:"#8155BA"}} />
+              <div>Extern Money Gains</div>
               <div>$1234789,3</div>
             </div>
          
@@ -325,4 +364,4 @@ const Ecommerce = () => {
   );
 };
 
-export default Ecommerce;
+export default Dashboard;
